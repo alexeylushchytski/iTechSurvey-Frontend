@@ -5,7 +5,7 @@ const GetYear = () => {
     var year = new Date().getFullYear();
     return (
         <div>
-            <p>Copyright © iTechArt alexey.luschitskiy. {year}</p>
+            <p>Copyright © {year} iTechArt</p>
         </div>
     )
  }

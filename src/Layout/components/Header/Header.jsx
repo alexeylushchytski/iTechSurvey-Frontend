@@ -4,9 +4,15 @@ import { render } from 'react-dom';
 const About = () => {
     return (
         <div>
-            <a href="https://www.itechart.by/about">About Company</a>
+            <a href="https://www.itechart.by/about">Company</a>
         </div>
     )
+ }
+
+ const EnvelopePicture = () => {
+   return (
+     <img src="/images/envelope.png"/>
+   )
  }
 
 export default class Header extends React.Component{
@@ -26,7 +32,10 @@ export default class Header extends React.Component{
     render(){
       // Render JSX
       return (
-        <About/>
+        <div>
+          <EnvelopePicture/>
+          <About/>
+        </div>
       );
     }
-  }
+}
