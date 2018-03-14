@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { envelope } from '../../../../images/envelope.png';
 
 const About = () => {
     return (
@@ -9,11 +10,13 @@ const About = () => {
     )
  }
 
+ 
  const EnvelopePicture = () => {
    return (
      <img src="/images/envelope.png"/>
    )
  }
+
 
 export default class Header extends React.Component{
     constructor(props){
@@ -32,9 +35,9 @@ export default class Header extends React.Component{
     render(){
       // Render JSX
       return (
-        <div>
-          <EnvelopePicture/>
+        <div id="header">
           <About/>
+          <EnvelopePicture/>
         </div>
       );
     }

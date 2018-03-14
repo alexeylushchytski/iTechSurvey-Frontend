@@ -12,6 +12,7 @@ var config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    devtool: "#eval-source-map",
     module : {
         rules : [
             {
@@ -22,7 +23,18 @@ var config = {
             {
                 test: /\.(scss|sass)$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
-            }
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [{
+                  loader: 'file-loader',
+                  options: {
+                      name: '[name].[ext]',
+                      outputPath: 'images/',
+                      publicPath: 'images/'
+                  }
+                }]
+              },
         ]
     }
 };

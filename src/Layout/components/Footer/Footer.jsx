@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 const GetYear = () => {
     var year = new Date().getFullYear();
     return (
-        <div>
+        <div id="footer">
             <p>Copyright © {year} iTechArt</p>
         </div>
     )

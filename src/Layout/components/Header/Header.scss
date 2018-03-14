@@ -1,8 +1,10 @@
-a {
-    float: right;
-}
-
 img {
     height: 50px;
     width: 50px;
+    display: inline-block;
+}
+
+a {
+    float: right;
+    display: block;
 }
