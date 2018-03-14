@@ -16,7 +16,7 @@ var config = {
     module : {
         rules : [
             {
-                test : /\.jsx?/,
+                test :  /\.(jsx|js)$/,
                 include : APP_DIR,
                 loader : 'babel-loader'
             },

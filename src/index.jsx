@@ -3,9 +3,13 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/init';
 import RootContainer from './containers/RootContainer.jsx'
-
-const store = configureStore();
+import store from './store/init';
 
 const rootNode = document.getElementById('container');
 
-render(<RootContainer />, rootNode);
+render(
+    <Provider store= {store}>
+        <RootContainer />
+    </Provider>, 
+    rootNode
+);
