@@ -1,11 +1,11 @@
 import React from "react";
-import Header from '../layout/components/Header/Header.jsx';
 import Footer from '../layout/components/Footer/Footer.jsx';
+import HeaderContainer from '../layout/containers/index';
 import { hot } from 'react-hot-loader';
 
 const RootContainer = () => (
     <div>
-        <Header />
+        <HeaderContainer />
         <Footer />
     </div>
 );

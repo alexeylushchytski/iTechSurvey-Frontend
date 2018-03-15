@@ -1,5 +1,5 @@
 export const action = () => {
     return {
-        type: "ACTION"
+        type: "ACTION", data: {}
     }
 }

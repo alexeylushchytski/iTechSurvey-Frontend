@@ -1,13 +1,18 @@
 import { createReducer } from 'redux-create-reducer';
-//import  as ActionTypes from '../constants/ActionTypes';
  
-const initialState = {};
+const initialState = {
+  isHide: false,
+};
  
  
-export const todos = createReducer(initialState, {
+ const User = createReducer(initialState, {
   ['ACTION'](state, action) {
-    return {
-        ...state
-    }
+    const newState = Object.assign({}, state);
+    newState.isHide = !newState.isHide;
+
+    return newState;
   }
-})
+});
+
+export default User;
+

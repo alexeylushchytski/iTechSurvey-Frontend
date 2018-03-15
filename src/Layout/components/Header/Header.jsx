@@ -21,24 +21,38 @@ const About = () => {
 export default class Header extends React.Component{
     constructor(props){
       // Pass props to parent class
+      console.log(props);
       super(props);
       // Set initial state
-      this.state = {
-        data: []
-      }
+      this.isAvailable = this.isAvailable.bind(this);
     }
     // Lifecycle method
     componentDidMount(){
 
-    }
+    };
+
     
+    
+    isAvailable() {
+        if (this.props.isHide) {
+          return (
+            <div id="header">
+              <About/>
+              <EnvelopePicture/>
+              <button onClick={this.props.action}/>
+            </div>
+          )
+        }
+        else return(
+          <div id="header">
+              <EnvelopePicture/>
+              <button onClick={this.props.action}/>
+            </div>
+        )
+    }
+
     render(){
       // Render JSX
-      return (
-        <div id="header">
-          <About/>
-          <EnvelopePicture/>
-        </div>
-      );
+      return this.isAvailable();
     }
 }
