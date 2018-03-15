@@ -5,6 +5,8 @@ var APP_DIR = path.resolve(__dirname, 'src');
 var STYLES_DIR = path.resolve(__dirname,'src/css');
 var config = {
     entry: [ 
+        'react-hot-loader/patch',
+        'webpack/hot/only-dev-server',
         APP_DIR + '/index.jsx',
         STYLES_DIR + '/main.scss'
     ],
@@ -12,6 +14,10 @@ var config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    devServer: {
+        hot: true,
+        historyApiFallback: true
+      },
     devtool: "#eval-source-map",
     module : {
         rules : [
@@ -36,7 +42,11 @@ var config = {
                 }]
               },
         ]
-    }
+    },
+    plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
 
 module.exports = config;

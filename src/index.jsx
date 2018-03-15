@@ -13,3 +13,11 @@ render(
     </Provider>, 
     rootNode
 );
+
+if (module.hot) {
+    module.hot.accept('./containers/RootContainer.jsx', () => {
+      // if you are using harmony modules ({modules:false})
+      // in all other cases - re-require App manually
+      render(require('./containers/RootContainer.jsx'))
+    })
+}
